@@ -1,0 +1,9 @@
+run: "uvicorn fake_platform.server:app --port 9000 & uvicorn app.main:app --port 8000"
+seed: "python seed.py"
+test: "pytest -v"
+base_url: "http://localhost:8000"
+endpoints:
+  - "POST /campaigns"
+  - "GET /campaigns/{id}"
+  - "GET /campaigns"
+  - "POST /webhooks/social-delivery"
